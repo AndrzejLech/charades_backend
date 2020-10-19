@@ -1,24 +1,35 @@
-# README
+# Technology
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.6.6
 
-Things you may want to cover:
+* Rails version 6.0.3.4
 
-* Ruby version
+* PostgreSQL 13
 
-* System dependencies
+# Team:
 
-* Configuration
+* Andrzej Lech (PM, Backend)
 
-* Database creation
+* Damian Grzelak (Backend)
 
-* Database initialization
+* Kuba Malinowski (Frontend)
 
-* How to run the test suite
+* Kuba Jurycz (Dev-Ops, Frontend)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Michał Chojniacki (Tester)
 
-* Deployment instructions
+# Useful commands:
 
-* ...
+- rails g model [name]
+
+- rails db:migrate
+
+- rails routes
+
+- docker ps
+
+- docker-compose build
+
+- docker-compose up -d
+
+- docker-compose down -v
