@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails charades_backend: development" uuid="ff09b30f-2c58-4d2a-a262-9dbf99698cc5">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://0.0.0.0:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails charades_backend: production" uuid="dee7b4e9-d63e-44de-a0f7-9956b3235ee4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails charades_backend: test" uuid="ebf57cdc-ff54-4e81-a728-4d79c4a9240c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/postgres</jdbc-url>
+    </data-source>
+  </component>
+</project>
