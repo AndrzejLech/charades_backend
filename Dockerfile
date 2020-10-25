@@ -6,8 +6,5 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN gem install bundler:1.17.2
 RUN bundle install
+RUN bundle update
 COPY . /myapp
-
-EXPOSE 3000
-
-CMD ["rails", "server", "-b", "0.0.0.0"]

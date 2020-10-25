@@ -12,10 +12,18 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 
 gem 'jwt'
-gem "devise"
-gem "simple_token_authentication"
 
-gem "bootsnap", require: false
+gem 'devise'
+
+gem 'simple_token_authentication'
+
+gem 'bootsnap'
+
+gem 'msgpack'
+
+gem 'rack-cors'
+
+gem 'tzinfo'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

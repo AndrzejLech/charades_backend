@@ -74,7 +74,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    jwt (2.2.1)
+    jwt (2.2.2)
     loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -100,6 +100,8 @@ GEM
     puma (4.3.6)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.3.4)
@@ -147,7 +149,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2020.2)
+    tzinfo-data (1.2020.4)
       tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -166,10 +168,13 @@ DEPENDENCIES
   byebug
   devise
   jwt
+  msgpack
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
   simple_token_authentication
+  tzinfo
   tzinfo-data
 
 RUBY VERSION
