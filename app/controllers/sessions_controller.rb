@@ -28,13 +28,21 @@ private
   def load_user
     @user = User.find_for_database_authentication(email: sign_in_params[:email])
     if @user
-      return @user
+        if @user.valid_password?(sign_in_params[:password])
+        return @user
+        else
+              render json: {
+                  messages: "Passwords doesn't match",
+                  is_success: false,
+                  data: {},
+               }, status: 400
+        end
     else
       render json: {
-          messages: "Cannot get User",
+          messages: "User doesn't exist",
           is_success: false,
-          data: {}
-      }, status: :failure
+          data: {},
+       },  status: 400
     end
   end
 end
