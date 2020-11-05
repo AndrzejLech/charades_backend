@@ -29,17 +29,21 @@ private
     @user = User.find_for_database_authentication(email: sign_in_params[:email])
     if @user
         if @user.valid_password?(sign_in_params[:password])
-        return @user
+        render json: {
+        message: "Signed User",
+        is_success: true,
+        data: @user,
+        }, status: 200
         else
               render json: {
-                  messages: "Passwords doesn't match",
+                  message: "Passwords doesn't match",
                   is_success: false,
                   data: {},
                }, status: 400
         end
     else
       render json: {
-          messages: "User doesn't exist",
+          message: "User doesn't exist",
           is_success: false,
           data: {},
        },  status: 400
