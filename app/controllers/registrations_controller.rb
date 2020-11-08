@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_action :verify_authenticity_token, :only => :create
 
   def create
     user = User.new(user_params)
@@ -20,7 +21,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password, :password_confirmation, :username)
   end
 end
 #post na sign_up
