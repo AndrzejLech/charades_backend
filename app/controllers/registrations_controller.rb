@@ -24,9 +24,12 @@ class RegistrationsController < Devise::RegistrationsController
     params.permit(:email, :password, :password_confirmation, :username)
   end
 end
+
+
 #post na sign_up
 #{
 #  user: {
+#   username: username,
 #   email:abc@example.com,
 #   password:password,
 #   password_confirmation:password,
