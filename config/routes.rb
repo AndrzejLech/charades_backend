@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     post "sign_in", to: "sessions#create"
   end
 
+  resources :basic_words
+  resources :categories
+  resources :words
 end
