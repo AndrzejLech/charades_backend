@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+
   def index
     render json:  {
         messages: "Loaded categories",
@@ -61,6 +62,6 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.permit(:name)
+    params.permit(:name, :user_id)
   end
 end
