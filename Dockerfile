@@ -7,7 +7,7 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 RUN gem install bundler:1.17.2
 RUN bundle install
 RUN bundle update
+RUN rm -f /myapp/tmp/pids/server.pid
 COPY . /myapp
-CMD rails s -b "0.0.0.0" --port 3000
-CMD cd ./myapp
-CMD sh deploy.sh
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]

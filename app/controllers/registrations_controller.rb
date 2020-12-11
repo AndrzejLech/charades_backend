@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :ensure_params_exist, only: :create
   # sign up
   def create
     user = User.new user_params
@@ -18,22 +17,10 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  private
-
-  def user_params
-    params.permit(:email, :password, :password_confirmation)
-  end
-
-  def ensure_params_exist
-    return if params[:user].present?
-    render json: {
-        messages: "Missing Params",
-        is_success: false,
-        data: [params]
-    }, status: :bad_request
+  private def user_params
+    params.permit(:email, :password, :password_confirmation, :username)
   end
 end
-
 
 #post na sign_up
 #{
@@ -41,5 +28,6 @@ end
 #   email:abc@example.com,
 #   password:password,
 #   password_confirmation:password,
+#   username:example,
 #  }
 # }
