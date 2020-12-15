@@ -1,33 +1,39 @@
 class WordsController < ApplicationController
+  before_action :get_user
+  before_action :get_category
+  before_action :set_word, only: [:show, :destroy]
+
   def index
+    @word = @category.words
     render json:  {
         messages: "Loaded words",
         status: "SUCCESS",
-        data: Word.order('id ASC')
+        data: @word
     }, status: :ok
   end
 
   def show
+    @word = @category.words.find(params[:category_id])
     render json:  {
         messages: "Loaded word",
         status: "SUCCESS",
-        data: Word.find(params[:id])
+        data: @word
     }, status: :ok
   end
 
   def create
-    word = Word.new(word_params)
-    if word.save
+    @word = @category.words.build(word_params)
+    if @word.save
       render json:  {
           messages: "Created word",
           status: "SUCCESS",
-          data: word
+          data: @word
       }, status: :ok
     else
       render json:  {
           messages: "Word not created",
           status: "ERROR",
-          data: word.errors
+          data: @word.errors
       }, status: :unprocessable_entity
     end
   end
@@ -59,8 +65,20 @@ class WordsController < ApplicationController
     }, status: :ok
   end
 
+  private def get_user
+    @user = User.find(params[:user_id])
+  end
+
+  private def get_category
+    @category = @user.categories.find([:category_id])
+  end
+
+  private def set_word
+    @word = @category.words.find(params[:id])
+  end
+
   private
   def word_params
-    params.permit(:word, :category_id)
+    params.permit(:word, :category_id, :user_id)
   end
 end
