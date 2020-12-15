@@ -70,7 +70,7 @@ class WordsController < ApplicationController
   end
 
   private def get_category
-    @category = @user.categories.find([:category_id])
+    @category = @user.categories.find(params[:category_id])
   end
 
   private def set_word

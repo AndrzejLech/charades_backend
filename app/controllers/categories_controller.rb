@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = @user.categories.find([:id])
+    @category = @user.categories.find(params[:id])
     render json: {
         messages: "Loaded category",
         status: "SUCCESS",
