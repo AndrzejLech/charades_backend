@@ -21,8 +21,6 @@ Bundler.require(*Rails.groups)
 
 module CharadesBackend
   class Application < Rails::Application
-    config.api_only = false
-    config.middleware.use ActionDispatch::Flash
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
