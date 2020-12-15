@@ -25,8 +25,16 @@ gem 'rack-cors'
 
 gem 'tzinfo'
 
+gem 'faraday'
+
+gem 'json'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'capybara-mechanize'
 end
 
 group :development do

@@ -12,9 +12,9 @@
 
 * Damian Grzelak (Backend)
 
-* Kuba Malinowski (Frontend)
+* Jakub Malinowski (Frontend)
 
-* Kuba Jurycz (Dev-Ops, Frontend)
+* Jakub Jurycz (Dev-Ops, Frontend)
 
 * Michał Chojniacki (Tester)
 
