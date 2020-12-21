@@ -6,4 +6,19 @@ Rails.application.routes.draw do
     post "sign_in", to: "sessions#create"
   end
 
+<<<<<<< Updated upstream
 end
+=======
+  resources :user do
+
+    resources :categories do
+      resources :words
+      end
+    resources :games do
+      resources :players
+    end
+  end
+
+  resources :basic_words
+end
+>>>>>>> Stashed changes
