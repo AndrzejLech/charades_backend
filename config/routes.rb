@@ -4,11 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post "sign_up", to: "registrations#create"
     post "sign_in", to: "sessions#create"
-  end
-
-<<<<<<< Updated upstream
-end
-=======
+    end
   resources :user do
 
     resources :categories do
@@ -21,4 +17,4 @@ end
 
   resources :basic_words
 end
->>>>>>> Stashed changes
+
