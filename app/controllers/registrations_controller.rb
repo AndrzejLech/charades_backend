@@ -25,11 +25,11 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def ensure_params_exist
-    return if params[:user].present?
+    return if user_params.present?
     render json: {
         messages: "Missing Params",
         is_success: false,
-        data: [params]
+        data: params[:user]
     }, status: :bad_request
   end
 end
