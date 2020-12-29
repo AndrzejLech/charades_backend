@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     render json: {
         messages: "Loaded categories",
         status: "SUCCESS",
-        data: @categories
+        data: @categories,
     }, status: :ok
   end
 

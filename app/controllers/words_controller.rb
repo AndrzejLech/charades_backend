@@ -4,11 +4,11 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:show, :destroy]
 
   def index
-    @word = @category.words
+    @words = @category.words
     render json:  {
         messages: "Loaded words",
         status: "SUCCESS",
-        data: @word
+        data: @words,
     }, status: :ok
   end
 
@@ -39,12 +39,12 @@ class WordsController < ApplicationController
   end
 
   def update
-    word = Word.find(params[:id])
-    if word.update_attributes(word_params)
+    @word = @category.words.find(params[:id])
+    if @word.update_attributes(word_params)
       render json:  {
           messages: "Updated word",
           status: "SUCCESS",
-          data: word
+          data: @word
       }, status: :ok
     else
       render json:  {
@@ -56,12 +56,12 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    word = Word.find(params[:id])
-    word.destroy
+    @word = @category.words.find(params[:id])
+    @word.destroy
     render json:  {
         messages: "Deleted word",
         status: "SUCCESS",
-        data: word
+        data: @word
     }, status: :ok
   end
 

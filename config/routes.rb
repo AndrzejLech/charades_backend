@@ -4,13 +4,18 @@ Rails.application.routes.draw do
   devise_scope :user do
     post "sign_up", to: "registrations#create"
     post "sign_in", to: "sessions#create"
-  end
-
+    end
   resources :user do
+
     resources :categories do
       resources :words
+    end
+
+    resources :games do
+      resources :players
     end
   end
 
   resources :basic_words
 end
+
