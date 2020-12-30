@@ -53,7 +53,7 @@ class PlayersController < ApplicationController
   end
 
   private def get_game
-    @game = @user.game.find(params[:game_id])
+    @game = @user.games.find(params[:game_id])
   end
 
   private def set_player
@@ -61,6 +61,6 @@ class PlayersController < ApplicationController
   end
 
   private def player_params
-    params.permit(:name, :game_id, :user_id)
+    params.permit(:name, :game_id)
   end
 end
