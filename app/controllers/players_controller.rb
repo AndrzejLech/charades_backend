@@ -1,4 +1,3 @@
-
 class PlayersController < ApplicationController
   before_action :get_user
   before_action :get_game
@@ -7,7 +6,7 @@ class PlayersController < ApplicationController
   def index
     @player = @game.players
     render json: {
-        messages: "Loaded words",
+        messages: "Loaded players",
         status: "SUCCESS",
         data: @player,
     }, status: :ok
@@ -61,6 +60,6 @@ class PlayersController < ApplicationController
   end
 
   private def player_params
-    params.permit(:name, :game_id)
+    params.permit(:name, :points, :game_id)
   end
 end
