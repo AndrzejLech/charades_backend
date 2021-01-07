@@ -1,5 +1,5 @@
 class BasicWordsController < ApplicationController
-  def index
+ def index
     @basic_word = BasicWord.order('id')
     render json: {status: 'Succes',
                   message: 'loaded all basic words',

@@ -3,11 +3,11 @@ class GamesController < ApplicationController
     before_action :set_games, only:  [:show, :destroy]
 
     def index
-      @game = @user.games
+      @games = @user.games
       render json: {
-          messages: "Loaded game",
+          messages: "Loaded games",
           status: "SUCCESS",
-          data: @game,
+          data: @games,
       }, status: :ok
     end
 

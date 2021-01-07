@@ -6,11 +6,10 @@ Rails.application.routes.draw do
     post "sign_in", to: "sessions#create"
     end
   resources :user do
-
     resources :categories do
       resources :words
     end
-
+    resources :statistics
     resources :games do
       resources :players
     end

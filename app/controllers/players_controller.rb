@@ -4,11 +4,11 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :destroy]
 
   def index
-    @player = @game.players
+    @players = @game.players
     render json: {
         messages: "Loaded players",
         status: "SUCCESS",
-        data: @player,
+        data: @players,
     }, status: :ok
   end
 
@@ -49,6 +49,10 @@ class PlayersController < ApplicationController
 
   private def get_user
     @user = User.find(params[:user_id])
+  end
+
+  private def get_category
+    @category = @user.categories.find(params[:category_id])
   end
 
   private def get_game
