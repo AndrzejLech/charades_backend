@@ -6,34 +6,33 @@ class SessionsController < Devise::SessionsController
     if @user.valid_password?(sign_in_params[:password])
       sign_in "user", @user
       render json: {
-          messages: "Signed In Successfully",
-          is_success: true,
-          data: {user: @user}
+        messages: "Signed In Successfully",
+        is_success: true,
+        data: {user: @user}
       }, status: :ok
     else
       render json: {
-          messages: "Signed In Failed - Unauthorized",
-          is_success: false,
-          data: {}
+        messages: "Signed In Failed - Unauthorized",
+        is_success: false,
+        data: {}
       }, status: :unauthorized
     end
   end
 
-private
+  private
 
   def sign_in_params
     params.permit :email, :password
   end
-
   def load_user
     @user = User.find_for_database_authentication(email: sign_in_params[:email])
     if @user
       return @user
     else
       render json: {
-          messages: @user.errors,
-          is_success: false,
-          data: {}
+        messages: @user.errors,
+        is_success: false,
+        data: {}
       }, status: :failure
     end
   end
