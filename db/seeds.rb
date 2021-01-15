@@ -8,20 +8,21 @@
 20.times do
   BasicWord.create({
                        category: 1,
-                       word: Faker::Creature::Animal.name
+                       word: Faker::Creature::Animal.unique.name
                    })
+
 end
 
 20.times do
   BasicWord.create({
                        category: 2,
-                       word: Faker::Game.title
+                       word: Faker::Game.unique.title
                    })
 end
 
 20.times do
   BasicWord.create({
                        category: 3,
-                       word: Faker::Movie.title
+                       word: Faker::Movie.unique.title
                    })
 end
